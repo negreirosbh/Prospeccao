@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Prospecção</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">gestaodeperdas@enel.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="fases">Escolha a Fase</string>
+
+    <string-array name="fases_arrays">
+        <item></item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>AB</item>
+        <item>AC</item>
+        <item>BC</item>
+        <item>ABC</item>
+    </string-array>
+
+
+    <string name="classe">Escolha a Classe</string>
+
+    <string-array name="classe_arrays">
+        <item></item>
+        <item>Comercial</item>
+        <item>Residencial</item>
+        <item>Industrial</item>
+        <item>Poder Publico</item>
+    </string-array>
+
+    <string name="atividade">Escolha a Atividade</string>
+
+    <string-array name="atividade_arrays">
+        <item></item>
+        <item>Pescaria</item>
+        <item>Aves</item>
+        <item>Fabrica de Gelo</item>
+    </string-array>
+
+    <string-array name="acao_arrays">
+        <item></item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="ligacao_arrays">
+        <item></item>
+        <item>Monofasico</item>
+        <item>Bifasico</item>
+        <item>Trifasico</item>
+    </string-array>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

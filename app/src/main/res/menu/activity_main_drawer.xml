@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/ic_inicio"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_prospecao"
+            android:icon="@mipmap/ic_prospecao"
+            android:title="Prospecção" />
+        <item
+            android:id="@+id/nav_ip_medida"
+            android:icon="@mipmap/ic_ipmedida"
+            android:title="IP Medida" />
+        <item
+            android:id="@+id/nav_ip_estimado"
+            android:icon="@mipmap/ic_ipestimada"
+            android:title="IP Estimada" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Configuração" />
+    </group>
+
+    <item android:title="Comunicação">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartilhar" />
+
+        </menu>
+    </item>
+
+</menu>

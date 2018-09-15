@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4caf50</color>
+    <color name="colorPrimaryDark">#309f90</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="background_material_light">#e2fafafa</color>
+    <color name="colorlinha1">#7ba05b</color>
+    <color name="colorlinha2">#a9c98e</color>
+    <color name="colorFundoLinha">#cbeccb</color>
+    <color name="holo_verde_escuro">#1f4902</color>
+</resources>
