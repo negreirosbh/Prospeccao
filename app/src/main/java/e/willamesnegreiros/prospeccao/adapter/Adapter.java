@@ -43,7 +43,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
         Prospeccao prospeccao = listaProspeccao.get( position );
 
-        holder.nc.setText(prospeccao.getNc());
+        holder.nc.setText(prospeccao.getNc().toString());
         holder.cidade.setText(prospeccao.getCidade());
         holder.dt.setText(prospeccao.getDt());
         holder.horas.setText(prospeccao.getHora());

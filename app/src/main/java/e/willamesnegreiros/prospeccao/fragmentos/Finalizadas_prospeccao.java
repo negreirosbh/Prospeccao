@@ -125,74 +125,75 @@ public class Finalizadas_prospeccao extends Fragment {
 */
     public void criarProspeccao(){
 
-        Prospeccao prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        Prospeccao prospeccao = new Prospeccao((long) 1, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
         //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha1));
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 2, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
         //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha2));
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 3, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
         //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha1));
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 4, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
         //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha2));
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 5, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
         //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha1));
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 6, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 7, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 8, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 9, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 10, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 11, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 12, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 13, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 14, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 14, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 15, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 16, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 17, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 18, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 19, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao("1234", "Fortaleza", "25/09/2018", "18:00");
+        prospeccao = new Prospeccao((long) 20, "Fortaleza", "25/09/2018", "18:00");
+        listaProspeccao.add(prospeccao);
+
+        prospeccao = new Prospeccao((long) 21, "Fortaleza", "25/09/2018", "18:00");
         listaProspeccao.add(prospeccao);
 
 
