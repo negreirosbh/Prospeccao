@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "543377158881",
+    "firebase_url": "https://prospeccao-3052d.firebaseio.com",
+    "project_id": "prospeccao-3052d",
+    "storage_bucket": "prospeccao-3052d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543377158881:android:2d70eab25e05a9c2",
+        "android_client_info": {
+          "package_name": "e.willamesnegreiros.prospeccao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543377158881-6di5pgh3lca63laomv2aq9qa3sa4mrqv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "e.willamesnegreiros.prospeccao",
+            "certificate_hash": "8d51b819c0971c5bf756140617d671febf23d7f2"
+          }
+        },
+        {
+          "client_id": "543377158881-d05m8qugaa8vpv49juhdpes4rn7aljs2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGFg_hym_7KZni1kLezEHKA4nUwumsLWc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543377158881-d05m8qugaa8vpv49juhdpes4rn7aljs2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

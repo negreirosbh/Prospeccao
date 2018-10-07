@@ -1,4 +1,5 @@
 package e.willamesnegreiros.prospeccao;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -6,22 +7,24 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import e.willamesnegreiros.prospeccao.fragmentos.Devolvidas_prospeccao;
 import e.willamesnegreiros.prospeccao.fragmentos.Finalizadas_prospeccao;
 import e.willamesnegreiros.prospeccao.fragmentos.Novo_prospeccao;
+import e.willamesnegreiros.prospeccao.model.Prospeccao;
 
-/**
- * Created by Belal on 2/3/2016.
- */
+
 //Extending FragmentStatePagerAdapter
 public class Paginas_prospeccao extends FragmentStatePagerAdapter {
 
     //integer to count number of tabs
     int tabCount;
+    private Prospeccao prospeccao = new Prospeccao(  );
 
 
     //Constructor to the class
-    public Paginas_prospeccao(FragmentManager fm, int tabCount) {
+    public Paginas_prospeccao(FragmentManager fm, int tabCount, Prospeccao prospeccao) {
         super(fm);
         //Initializing tab count
         this.tabCount= tabCount;
+
+        this.prospeccao = prospeccao;
     }
 
     //Overriding method getItem
@@ -30,7 +33,11 @@ public class Paginas_prospeccao extends FragmentStatePagerAdapter {
         //Returning the current tabs
         switch (position) {
             case 0:
+                Bundle bundle = new Bundle(  );
+                bundle.putSerializable( "prospeccao", prospeccao );
+                //bundle.putString( "strNc", this.prospeccao.getNc().toString() );
                 Novo_prospeccao novo_prospeccao = new Novo_prospeccao();
+                novo_prospeccao.setArguments( bundle );
                 return novo_prospeccao;
             case 1:
                 Finalizadas_prospeccao finalizadas_prospeccao = new Finalizadas_prospeccao();

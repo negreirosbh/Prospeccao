@@ -1,20 +1,28 @@
 package e.willamesnegreiros.prospeccao.fragmentos;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
+
+import e.willamesnegreiros.prospeccao.MainActivity;
 import e.willamesnegreiros.prospeccao.R;
 import e.willamesnegreiros.prospeccao.RecyclerItemClickListener;
 import e.willamesnegreiros.prospeccao.adapter.Adapter;
-import e.willamesnegreiros.prospeccao.model.Filme;
+import e.willamesnegreiros.prospeccao.helper.ProspeccaoDAO;
 import e.willamesnegreiros.prospeccao.model.Prospeccao;
 
 public class Finalizadas_prospeccao extends Fragment {
@@ -22,6 +30,9 @@ public class Finalizadas_prospeccao extends Fragment {
     private RecyclerView recyclerView;
     //private List<Filme> listaFilmes = new ArrayList<>();
     private List<Prospeccao> listaProspeccao = new ArrayList<>();
+    private ProspeccaoDAO prospeccaoDAO;
+    private View view = null;
+    private Adapter adapterLista;
 
     //Overriden method onCreateView
     @Override
@@ -29,52 +40,74 @@ public class Finalizadas_prospeccao extends Fragment {
 
         //Returning the layout file after inflating
         //Change R.layout.tab1 in you classes
-        View view = inflater.inflate(R.layout.finalizadas_prospeccao, container, false);
+        view = inflater.inflate(R.layout.finalizadas_prospeccao, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerView);
-
-
-
 
         //Listagem
         //this.criarFilmes();
         this.criarProspeccao();
 
-        //Configurar adapter
-        Adapter adapterLista = new Adapter( listaProspeccao );
-
         //Configurar Recyclerview
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        //recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
-        recyclerView.setAdapter( adapterLista );
+        recyclerView.addItemDecoration( new DividerItemDecoration( view.getContext(), LinearLayout.VERTICAL ) );
 
+/*
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(
-                        getActivity(),
+                        view.getContext(),
                         recyclerView,
                         new RecyclerItemClickListener.OnItemClickListener() {
 
-                           @Override
+                            @Override
                             public void onItemClick(View view, int position) {
-                                Prospeccao prospeccao = listaProspeccao.get( position );
-                                Toast.makeText(
-                                        getActivity(),
-                                        "Item pressionado: " + prospeccao.getNc(),
-                                        Toast.LENGTH_SHORT
-                                ).show();
+
                             }
 
                             @Override
-                            public void onLongItemClick(View view, int position) {
-                                Prospeccao prospeccao = listaProspeccao.get( position );
-                                Toast.makeText(
-                                        getActivity(),
-                                        "Click longo: "  + prospeccao.getNc(),
-                                        Toast.LENGTH_SHORT
-                                ).show();
+                            public void onLongItemClick(final View viewF, int position) {
+                                //Recupera prospeccao para deletar
 
+                                final Prospeccao prospecSelecionada = listaProspeccao.get( position );
+
+
+                                AlertDialog.Builder dialog = new AlertDialog.Builder(viewF.getContext());
+
+                                //Configura título e mensagem
+                                dialog.setTitle("Confirmar exclusão");
+                                dialog.setMessage("Deseja excluir o relatório da NC: " + prospecSelecionada.getNc().toString() + " ?" );
+
+                                dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        prospeccaoDAO = new ProspeccaoDAO(viewF.getContext());
+                                        if ( prospeccaoDAO.deletar(prospecSelecionada) ){
+
+                                            Toast.makeText(viewF.getContext(),
+                                                    "Sucesso ao excluir tarefa!",
+                                                    Toast.LENGTH_SHORT).show();
+                                            setUserVisibleHint(true);
+
+                                        }else {
+                                            Toast.makeText(viewF.getContext(),
+                                                    "Erro ao excluir tarefa!",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+
+                                    }
+                                });
+
+                                dialog.setNegativeButton("Não", null );
+
+                                //Exibir dialog
+                                dialog.create();
+                                dialog.show();
+                                //atualizarLista();
+
+                            //((MainActivity)getActivity()).changePagerItem( 0 );
                             }
 
                             @Override
@@ -84,118 +117,48 @@ public class Finalizadas_prospeccao extends Fragment {
                         }
                 )
         );
+*/
+
+
 
         return view;
     }
-/*
-    public void criarFilmes(){
 
-        Filme filme = new Filme("Homem Aranha - De volta ao lar", "Aventura", "2017");
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
 
-        listaFilmes.add(filme);
+        if(isVisibleToUser){
 
-        filme = new Filme("Mulher Maravilha", "Fantasia", "2017");
-        listaFilmes.add(filme);
+            atualizarLista();
+        }
 
-        filme = new Filme("Liga da Justiça", "Ficção", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Capitão América - Guerra Civíl", "Aventura/Ficção", "2016");
-        listaFilmes.add(filme);
-
-        filme = new Filme("It: A Coisa", "Drama/Terror", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Pica-Pau: O Filme", "Comédia/Animação", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("A Múmia", "Terror", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("A Bela e a Fera", "Romance", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Meu malvado favorito 3", "Comédia", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Carros 3", "Comédia", "2017");
-        listaFilmes.add(filme);
 
     }
-*/
+
+    public void atualizarLista()
+    {
+        this.criarProspeccao();
+
+        //Configurar adapter
+        adapterLista = new Adapter( listaProspeccao, view.getContext(), getActivity(), this.view );
+        //recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
+        recyclerView.setAdapter( adapterLista );
+        recyclerView.requestLayout();
+    }
+
+
     public void criarProspeccao(){
 
-        Prospeccao prospeccao = new Prospeccao((long) 1, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-        //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha1));
+        //Prospeccao prospeccao = new Prospeccao((long) 1, "Fortaleza", "25/09/2018", "18:00");
+        //listaProspeccao.add(prospeccao);
 
-        prospeccao = new Prospeccao((long) 2, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-        //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha2));
+        prospeccaoDAO = new ProspeccaoDAO(view.getContext());
+        listaProspeccao = prospeccaoDAO.listar();
 
-        prospeccao = new Prospeccao((long) 3, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-        //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha1));
-
-        prospeccao = new Prospeccao((long) 4, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-        //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha2));
-
-        prospeccao = new Prospeccao((long) 5, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-        //linearLayout.setBackgroundColor(getResources().getColor(R.color.colorlinha1));
-
-        prospeccao = new Prospeccao((long) 6, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 7, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 8, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 9, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 10, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 11, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 12, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 13, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 14, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 14, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 15, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 16, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 17, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 18, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 19, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 20, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
-
-        prospeccao = new Prospeccao((long) 21, "Fortaleza", "25/09/2018", "18:00");
-        listaProspeccao.add(prospeccao);
 
 
     }
+
+
 }

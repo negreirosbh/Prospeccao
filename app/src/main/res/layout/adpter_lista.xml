@@ -30,7 +30,7 @@
             android:textStyle="bold"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnEditarProspeccao"
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:text="editar"
@@ -59,8 +59,9 @@
 
         <TextView
             android:id="@+id/txt_item_hora"
-            android:layout_width="wrap_content"
+            android:layout_width="54dp"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="18:00"
             android:textSize="14sp" />
 

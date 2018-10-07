@@ -1,9 +1,15 @@
 package e.willamesnegreiros.prospeccao.model;
 
+import java.io.DataInput;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Timer;
 
 public class Prospeccao implements Serializable {
 
+    private Long id;
     private String cidade;
     private Long nc;
     private Long nf;
@@ -26,6 +32,26 @@ public class Prospeccao implements Serializable {
 
     public Prospeccao(){
 
+        cidade = "";
+        nc = 0L;
+        nf = 0L;
+        fases = "";
+        disjuntor = "";
+        leitura = "";
+        disco = 0;
+        voltas = 0;
+        kdMedid = "";
+        classe = "";
+        atividade = "";
+        coordenadaX = 0L;
+        coordenadaY = 0L;
+        acao = "";
+        observacao = "";
+        dt = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        hora = new SimpleDateFormat("HH:mm").format(Calendar.getInstance().getTime());
+        nomeFoto = "";
+        estado = "S";
+
     }
 
 
@@ -37,6 +63,10 @@ public class Prospeccao implements Serializable {
         this.hora = hora;
 
     }
+
+    public Long getId() { return id; }
+
+    public void setId(Long id) { this.id = id; }
 
     public String getCidade() {
         return cidade;

@@ -26,6 +26,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 + " (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     " nc INTEGER NOT NULL," +
                     " nf INTEGER," +
+                    " cidade TEXT," +
                     " fases TEXT," +
                     " disjuntor TEXT," +
                     " leitura TEXT," +
@@ -39,6 +40,8 @@ public class DbHelper extends SQLiteOpenHelper {
                     " acao TEXT," +
                     " obs TEXT," +
                     " nomeFoto TEXT," +
+                    " dt TEXT," +
+                    " hora TEXT," +
                     " estado TEXT); ";
 
         try {

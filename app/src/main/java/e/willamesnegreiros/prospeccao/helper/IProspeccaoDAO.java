@@ -12,9 +12,10 @@ import e.willamesnegreiros.prospeccao.model.Prospeccao;
 
 public interface IProspeccaoDAO {
 
-    public boolean salvar(Prospeccao tarefa);
-    public boolean atualizar(Prospeccao tarefa);
-    public boolean deletar(Prospeccao tarefa);
+    public boolean salvar(Prospeccao prospeccao);
+    public boolean atualizar(Prospeccao prospeccao, String[] args);
+    public boolean deletar(String[] args);
+    public Prospeccao consulta(String[] args);
     public List<Prospeccao> listar();
 
 }

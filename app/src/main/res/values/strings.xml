@@ -71,5 +71,191 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string-array name="cidades_arrays">
+    <item>Abaiara</item>
+    <item>Acarape</item>
+    <item>Acarau</item>
+    <item>Acopiara</item>
+    <item>Aiuaba</item>
+    <item>Alcantaras</item>
+    <item>Altaneira</item>
+    <item>Alto Santo</item>
+    <item>Amontada</item>
+    <item>Antonina do Norte</item>
+    <item>Apuiares</item>
+    <item>Aquiraz</item>
+    <item>Aracati</item>
+    <item>Aracoiaba</item>
+    <item>Ararenda</item>
+    <item>Araripe</item>
+    <item>Aratuba</item>
+    <item>Arneiroz</item>
+    <item>Assare</item>
+    <item>Aurora</item>
+    <item>Baixio</item>
+    <item>Banabuiu</item>
+    <item>Barbalha</item>
+    <item>Barreira</item>
+    <item>Barro</item>
+    <item>Barroquinha</item>
+    <item>Baturite</item>
+    <item>Beberibe</item>
+    <item>Bela Cruz</item>
+    <item>Boa Viagem</item>
+    <item>Brejo Santo</item>
+    <item>Camocim</item>
+    <item>Campos Sales</item>
+    <item>Caninde</item>
+    <item>Capistrano</item>
+    <item>Caridade</item>
+    <item>Carire</item>
+    <item>Caririacu</item>
+    <item>Carius</item>
+    <item>Carnaubal</item>
+    <item>Cascavel</item>
+    <item>Catarina</item>
+    <item>Catunda</item>
+    <item>Caucaia</item>
+    <item>Cedro</item>
+    <item>Chaval</item>
+    <item>Choro</item>
+    <item>Chorozinho</item>
+    <item>Coreau</item>
+    <item>Crateus</item>
+    <item>Crato</item>
+    <item>Croata</item>
+    <item>Cruz</item>
+    <item>Deputado Irapuan Pinheiro</item>
+    <item>Erere</item>
+    <item>Eusebio</item>
+    <item>Farias Brito</item>
+    <item>Forquilha</item>
+    <item>Fortaleza</item>
+    <item>Fortim</item>
+    <item>Frecheirinha</item>
+    <item>General Sampaio</item>
+    <item>Graca</item>
+    <item>Granja</item>
+    <item>Granjeiro</item>
+    <item>Groairas</item>
+    <item>Guaiuba</item>
+    <item>Guaraciaba do Norte</item>
+    <item>Guaramiranga</item>
+    <item>Hidrolandia</item>
+    <item>Horizonte</item>
+    <item>Ibaretama</item>
+    <item>Ibiapina</item>
+    <item>Ibicuitinga</item>
+    <item>Icapui</item>
+    <item>Ico</item>
+    <item>Iguatu</item>
+    <item>Independencia</item>
+    <item>Ipaporanga</item>
+    <item>Ipaumirim</item>
+    <item>Ipu</item>
+    <item>Ipueiras</item>
+    <item>Iracema</item>
+    <item>Iraucuba</item>
+    <item>Itaicaba</item>
+    <item>Itaitinga</item>
+    <item>Itapage</item>
+    <item>Itapipoca</item>
+    <item>Itapiuna</item>
+    <item>Itarema</item>
+    <item>Itatira</item>
+    <item>Jaguaretama</item>
+    <item>Jaguaribara</item>
+    <item>Jaguaribe</item>
+    <item>Jaguaruana</item>
+    <item>Jardim</item>
+    <item>Jati</item>
+    <item>Jijoca de Jericoacoara</item>
+    <item>Juazeiro do Norte</item>
+    <item>Jucas</item>
+    <item>Lavras da Mangabeira</item>
+    <item>Limoeiro do Norte</item>
+    <item>Madalena</item>
+    <item>Maracanau</item>
+    <item>Maranguape</item>
+    <item>Marco</item>
+    <item>Martinopole</item>
+    <item>Massape</item>
+    <item>Mauriti</item>
+    <item>Meruoca</item>
+    <item>Milagres</item>
+    <item>Milha</item>
+    <item>Miraima</item>
+    <item>Missao Velha</item>
+    <item>Mombaca</item>
+    <item>Monsenhor Tabosa</item>
+    <item>Morada Nova</item>
+    <item>Moraujo</item>
+    <item>Morrinhos</item>
+    <item>Mucambo</item>
+    <item>Mulungu</item>
+    <item>Nova Olinda</item>
+    <item>Nova Russas</item>
+    <item>Novo Oriente</item>
+    <item>Ocara</item>
+    <item>Oros</item>
+    <item>Pacajus</item>
+    <item>Pacatuba</item>
+    <item>Pacoti</item>
+    <item>Pacuja</item>
+    <item>Palhano</item>
+    <item>Palmacia</item>
+    <item>Paracuru</item>
+    <item>Paraipaba</item>
+    <item>Parambu</item>
+    <item>Paramoti</item>
+    <item>Pedra Branca</item>
+    <item>Penaforte</item>
+    <item>Pentecoste</item>
+    <item>Pereiro</item>
+    <item>Pindoretama</item>
+    <item>Piquet Carneiro</item>
+    <item>Pires Ferreira</item>
+    <item>Poranga</item>
+    <item>Porteiras</item>
+    <item>Potengi</item>
+    <item>Potiretama</item>
+    <item>Quiterianopolis</item>
+    <item>Quixada</item>
+    <item>Quixela</item>
+    <item>Quixeramobim</item>
+    <item>Quixere</item>
+    <item>Redencao</item>
+    <item>Reriutaba</item>
+    <item>Russas</item>
+    <item>Saboeiro</item>
+    <item>Salitre</item>
+    <item>Santa Quiteria</item>
+    <item>Santana do Acarau</item>
+    <item>Santana do Cariri</item>
+    <item>Sao Benedito</item>
+    <item>Sao Goncalo do Amarante</item>
+    <item>Sao Joao do Jaguaribe</item>
+    <item>Sao Luis do Curu</item>
+    <item>Senador Pompeu</item>
+    <item>Senador Sa</item>
+    <item>Sobral</item>
+    <item>Solonopole</item>
+    <item>Tabuleiro do Norte</item>
+    <item>Tamboril</item>
+    <item>Tarrafas</item>
+    <item>Taua</item>
+    <item>Tejucuoca</item>
+    <item>Tiangua</item>
+    <item>Trairi</item>
+    <item>Tururu</item>
+    <item>Ubajara</item>
+    <item>Umari</item>
+    <item>Umirim</item>
+    <item>Uruburetama</item>
+    <item>Uruoca</item>
+    <item>Varjota</item>
+    <item>Varzea Alegre</item>
+    <item>Vicosa do Ceara</item>
+    </string-array>
 
 </resources>

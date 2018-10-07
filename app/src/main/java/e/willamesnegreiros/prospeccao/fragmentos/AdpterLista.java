@@ -1,4 +1,5 @@
 package e.willamesnegreiros.prospeccao.fragmentos;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -25,6 +26,8 @@ public class AdpterLista extends RecyclerView.Adapter<AdpterLista.MyViewHolder>
         holder.data.setText("15/09/2018");
         holder.hora.setText("18:00");
 
+
+
     }
 
     @Override
@@ -40,13 +43,18 @@ public class AdpterLista extends RecyclerView.Adapter<AdpterLista.MyViewHolder>
         public TextView cidade;
         public TextView data;
         public TextView hora;
-        public MyViewHolder(@NonNull View itemView)
+        public Button editar;
+        public MyViewHolder(@NonNull final View itemView)
         {
             super(itemView);
             nc = itemView.findViewById(R.id.txt_item_nc);
             cidade = itemView.findViewById(R.id.txt_item_cidade);
             data = itemView.findViewById(R.id.txt_item_data);
             hora = itemView.findViewById(R.id.txt_item_hora);
+            editar = itemView.findViewById(R.id.btnEditarProspeccao);
+
+
+
         }
     }
 

@@ -1,5 +1,6 @@
 package e.willamesnegreiros.prospeccao;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
@@ -16,6 +17,9 @@ import android.support.v4.view.ViewPager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import e.willamesnegreiros.prospeccao.helper.ProspeccaoDAO;
+import e.willamesnegreiros.prospeccao.model.Prospeccao;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,6 +27,7 @@ public class MainActivity extends AppCompatActivity
     public ViewPager viewPager;
     public Button botaoipmedidaavanca;
     public TextView subtituloIpEstimadaPonto;
+
 
 
     //teste
@@ -51,7 +56,7 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         viewPager = (ViewPager) findViewById(R.id.pager);
         final Paginas_prospeccao adapter = new Paginas_prospeccao
-                (getSupportFragmentManager(), tabLayout.getTabCount());
+                (getSupportFragmentManager(), tabLayout.getTabCount(), new Prospeccao(  ));
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -70,6 +75,8 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
+
 
         /*recyclerView = findViewById(R.id.recyclerView);
 
@@ -229,7 +236,7 @@ public class MainActivity extends AppCompatActivity
 
             viewPager = (ViewPager) findViewById(R.id.pager);
             final Paginas_prospeccao adapter = new Paginas_prospeccao
-                    (getSupportFragmentManager(), tabLayout.getTabCount());
+                    (getSupportFragmentManager(), tabLayout.getTabCount(), new Prospeccao(  ));
             viewPager.setAdapter(adapter);
             viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
             tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -311,6 +318,38 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void enviarDados(int pageNumber, Long nc, String dt, String hora) {
+        Prospeccao prospeccao;
+        prospeccao = new Prospeccao(  );
+        prospeccao.setNc( nc );
+        prospeccao.setDt( dt );
+        prospeccao.setHora( hora );
+
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        final Paginas_prospeccao adapter = new Paginas_prospeccao
+                (getSupportFragmentManager(), tabLayout.getTabCount(), prospeccao);
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        viewPager.setCurrentItem(pageNumber);
     }
 
 }
